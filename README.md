@@ -47,18 +47,25 @@ Link: https://huggingface.co/mfranzon/fire-smoke-yolov8
 
 
 Resultados obtenidos
-Tabla comparativa de los resultados obtenidos con el conjunto de datos de WillFire
-Métrica	Modelo 1	Modelo 2	Modelo 3
-Precisión	13.57 %	46.44%	47.20%
-Recall	7.21%	40.82%	38.70%
-mAP@50	2.57%	33.59%	2.56%
-mAP@50–95	0.74%	15.97%	15.28%
-Inferencia por imagen	11.1 ms	4.1ms	4.0ms
+<img width="972" height="331" alt="image" src="https://github.com/user-attachments/assets/201af261-98b4-4b69-a52e-0573e9b2e795" />
+
+
+
+
 
 Interpretación de resultados.
 Modelo 1: Presenta un rendimiento muy bajo. Su recall de 7.21% indica que recupera solo una pequeña proporción de los objetos anotados
-  Modelo 2: Obtiene el mejor recall, el mayor mAP@50 y el mayor mAP@50–95. También tiene un tiempo de inferencia bajo. Es el mejor candidato inicial para continuar las pruebas.
+
+Modelo 2: Obtiene el mejor recall, el mayor mAP@50 y el mayor mAP@50–95. También tiene un tiempo de inferencia bajo. Es el mejor candidato inicial para continuar las pruebas.
+
 Modelo 3: Consigue la mayor precisión global, por un margen pequeño frente al Modelo 2, y una inferencia ligeramente más rápida. Sin embargo, su recall es menor, por lo que deja sin detectar más objetos.
+
+Conclusion:
+
+El Modelo 2 se recomienda como el modelo con mayor potencial para continuar el desarrollo del proyecto, debido a que presenta el mejor equilibrio entre desempeño de detección, eficiencia computacional y velocidad de procesamiento.
+En la evaluación realizada sobre 1,807 imágenes y 4,196 objetos anotados, el Modelo 2 obtuvo una precisión de 46.44%, un recall de 40.82%, un mAP@50 de 33.59% y un mAP@50-95 de 15.97%. Estos resultados fueron superiores a los del Modelo 3 en recall y en ambas métricas de mAP, mientras que el Modelo 1 presentó un desempeño considerablemente inferior.
+Presentó un tiempo de inferencia de aproximadamente 4.1 ms por imagen, lo que permite considerarlo adecuado para aplicaciones de análisis de video en tiempo cercano al real y facilita el procesamiento de múltiples fuentes de video.
+
 
 
 
