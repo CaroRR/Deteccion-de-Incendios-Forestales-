@@ -1,0 +1,37 @@
+pip install -U ultralytics huggingface_hub
+%pip install -q --upgrade "huggingface_hub>=1.31.0,<2.0" "transformers==5.18.0"
+import huggingface_hub
+import transformers
+import pandas
+import pyarrow
+import ultralytics
+import torch
+from huggingface_hub import login
+from google.colab import userdata
+
+
+Conjunto de datos
+
+Link del conjunto de datos:
+ https://huggingface.co/datasets/odiug77/wildfire
+
+Codigo de descarga
+from datasets import load_dataset
+
+nombre_dataset = "odiug77/wildfire"
+
+dataset = load_dataset(nombre_dataset)
+
+print("Dataset cargado correctamente.")
+print("\nEstructura del dataset:")
+print(dataset)
+
+print("\nParticiones disponibles:")
+print(list(dataset.keys()))
+
+for nombre_split, datos in dataset.items():
+    print(f"\nPartición: {nombre_split}")
+    print("Número de ejemplos:", len(datos))
+    print("Columnas:", datos.column_names)
+    print("Características:")
+    print(datos.features)
